@@ -1,0 +1,60 @@
+
+<mat-card>
+
+  <div >
+      <h1 class="text-light">Detalhes do Usuário</h1>
+  </div>
+
+<div *ngIf="Usuario">
+
+<form  >
+
+
+<div class="input-box">
+  <mat-form-field>
+    <mat-label>Nome:</mat-label>
+   <input matInput type="text" class="form-control text-dark" value="{{Usuario.nome}}" disabled>
+    </mat-form-field>
+</div>
+
+<div  class="input-box">
+  <mat-form-field>
+    <mat-label>Sobrenome:</mat-label>
+    <input matInput type="text" class="form-control  text-dark" value="{{Usuario.sobrenome}}" disabled>
+    </mat-form-field>
+</div>
+
+<div  class="input-box">
+  <mat-form-field>
+    <mat-label>E-mail:</mat-label>
+    <input matInput type="text" class="form-control  text-dark" value="{{Usuario.email}}" disabled>
+    </mat-form-field>
+</div>
+
+<div  class="input-box">
+  <mat-form-field>
+    <mat-label>Data de Nascimento:</mat-label>
+    <input matInput type="text" class="form-control  text-dark" value="{{Usuario.dataNascimento}}" disabled>
+    </mat-form-field>
+</div>
+
+<div  class="input-box">
+  <mat-form-field>
+    <mat-label>Escolaridade:</mat-label>
+    <input matInput type="text" class="form-control  text-dark" value="{{Usuario.escolaridade}}" disabled>
+    </mat-form-field>
+</div>
+
+
+
+
+<div class="btn-box">
+    <a  routerLink=""  mat-raised-button>Voltar</a>
+</div>
+
+
+</form>
+</div>
+
+
+</mat-card>

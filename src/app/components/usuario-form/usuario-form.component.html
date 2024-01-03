@@ -1,0 +1,81 @@
+
+
+
+<mat-card>
+    <h1>{{btnTitulo}}</h1>
+
+  <form  [formGroup]="UsuarioForm" (ngSubmit)="submit()" #formDir="ngForm">
+  <input type="hidden" value="" formControlName="id">
+
+  <div class="input-box">
+    <mat-form-field>
+      <mat-label>Nome:</mat-label>
+      <input matInput id="nome" type="text" class="form-control text-dark" maxlength="20" formControlName="nome" placeholder="Insira o nome!" required >
+    </mat-form-field>
+  </div>
+  
+  <div  class="input-box">
+    <mat-form-field>
+      <mat-label>Sobrenome:</mat-label>
+         <input matInput id="sobrenome" type="text" class="form-control  text-dark" maxlength="100" formControlName="sobrenome" placeholder="Insira o sobrenome!" required>
+     </mat-form-field>
+  </div>
+
+  <div  class="input-box">
+    <mat-form-field>
+      <mat-label>E-mail:</mat-label>
+         <input matInput id="email" type="text" class="form-control  text-dark" maxlength="50" formControlName="email" placeholder="Insira o e-mail!" required>
+     </mat-form-field>
+  </div>
+ 
+  <div  class="input-box">
+    <mat-form-field>
+      <mat-label>Data de Nascimento:</mat-label>
+      <mat-form-field class="form-select">
+        <mat-label>Selecione</mat-label>
+        <input matInput [max]="maxDate" [matDatepicker]="picker" formControlName="dataNascimento">
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+     </mat-form-field>
+  </div>
+
+  <mat-form-field>
+    <mat-label>Escolaridade</mat-label>
+    <mat-select id="escolaridade" class="form-select"  formControlName="escolaridade" required>
+      <mat-option value="Infantil">Ensino Infantil</mat-option>
+      <mat-option value="Fundamental">Ensino Fundamental</mat-option>
+      <mat-option value="Medio">Ensino Médio</mat-option>
+      <mat-option value="Superior">Ensino Superior</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+
+
+
+<div  class="btn-box">
+    <button type="submit" class="btn btn-success w-50" [disabled]="!UsuarioForm.valid"  mat-raised-button color="primary" >{{btnAcao}}</button>
+    <button class="btn btn-primary w-50" routerLink=""   mat-raised-button >Voltar</button>
+</div>
+
+<br>
+<div *ngIf="UsuarioForm.get('nome')?.errors?.['required'] && UsuarioForm.get('nome')?.touched">
+  <font color="red">Nome obrigatório!</font>
+</div>
+<div *ngIf="UsuarioForm.get('sobrenome')?.errors?.['required'] && UsuarioForm.get('sobrenome')?.touched">
+  <font color="red">Sobrenome obrigatório!</font>
+</div>
+<div *ngIf="UsuarioForm.get('email')?.errors && UsuarioForm.get('email')?.touched">
+  <font color="red">E-mail inválido!</font>
+</div>
+<div *ngIf="UsuarioForm.get('dataNascimento')?.errors && UsuarioForm.get('dataNascimento')?.touched">
+  <font color="red">Data inválida!</font>
+</div>
+<div *ngIf="UsuarioForm.get('escolaridade')?.errors && UsuarioForm.get('escolaridade')?.touched">
+  <font color="red">Escolaridade inválida!</font>
+</div>
+
+</form>
+
+</mat-card>

@@ -1,0 +1,15 @@
+<div *ngIf="Usuario">
+<h1 mat-dialog-title>Deseja confirmar a exclução?</h1>
+<div mat-dialog-content>
+  <p style="font: bold;">Usuário:</p>
+  <p>{{Usuario.nome}} {{Usuario.sobrenome}}</p>
+
+  <p style="font-style: bold;">E-mail:</p>
+  <p>{{Usuario.email}}</p>
+
+</div>
+<div mat-dialog-actions>
+  <button mat-button  mat-raised-button color="warn" (click)="excluir()">Confirmar</button>
+  <button class="btn btn-primary w-50"  mat-raised-button (click)="voltar()">Voltar</button>
+</div>
+</div>
