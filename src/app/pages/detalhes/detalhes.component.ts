@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { UsuarioService } from 'src/app/services/usuario-service.service';
-import { Usuario } from 'src/app/models/Usuarios';
+import { TarefaService } from 'src/app/services/tarefa-service.service';
+import { Tarefa } from 'src/app/models/Tarefas';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
@@ -10,10 +10,10 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class DetalhesComponent implements OnInit{
 
-   Usuario?: Usuario;
+   Tarefa?: Tarefa;
    id!:number;
 
-  constructor(private UsuarioService: UsuarioService, private route: ActivatedRoute, private router : Router) {
+  constructor(private TarefaService: TarefaService, private route: ActivatedRoute, private router : Router) {
 
   }
 
@@ -21,12 +21,13 @@ export class DetalhesComponent implements OnInit{
 
       this.id =  Number(this.route.snapshot.paramMap.get("id"));
 
-      this.UsuarioService.GetUsuario( this.id).subscribe((data) => {
+      this.TarefaService.GetTarefa( this.id).subscribe((data) => {
          const dados = data.dados;
-         dados.dataNascimento = new Date(dados.dataNascimento!).toLocaleDateString("pt-BR");
-         dados.escolaridade = "Ensino " + dados.escolaridade;
+         dados.dataInicio = new Date(dados.dataInicio!).toLocaleDateString("pt-BR");
+         dados.dataConclusao = new Date(dados.dataConclusao!).toLocaleDateString("pt-BR");
+         dados.situacao = dados.situacao;
 
-         this.Usuario = dados;
+         this.Tarefa = dados;
       });
   }
 }

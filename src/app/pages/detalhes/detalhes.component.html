@@ -2,10 +2,10 @@
 <mat-card>
 
   <div >
-      <h1 class="text-light">Detalhes do Usuário</h1>
+      <h1 class="text-light">Detalhes da Tarefa</h1>
   </div>
 
-<div *ngIf="Usuario">
+<div *ngIf="Tarefa">
 
 <form  >
 
@@ -13,35 +13,42 @@
 <div class="input-box">
   <mat-form-field>
     <mat-label>Nome:</mat-label>
-   <input matInput type="text" class="form-control text-dark" value="{{Usuario.nome}}" disabled>
+   <input matInput type="text" class="form-control text-dark" value="{{Tarefa.nome}}" disabled>
     </mat-form-field>
 </div>
 
 <div  class="input-box">
   <mat-form-field>
-    <mat-label>Sobrenome:</mat-label>
-    <input matInput type="text" class="form-control  text-dark" value="{{Usuario.sobrenome}}" disabled>
+    <mat-label>Descrição:</mat-label>
+    <input matInput type="text" class="form-control  text-dark" value="{{Tarefa.descricao}}" disabled>
     </mat-form-field>
 </div>
 
 <div  class="input-box">
   <mat-form-field>
-    <mat-label>E-mail:</mat-label>
-    <input matInput type="text" class="form-control  text-dark" value="{{Usuario.email}}" disabled>
+    <mat-label>Responsável:</mat-label>
+    <input matInput type="text" class="form-control  text-dark" value="{{Tarefa.responsavel}}" disabled>
     </mat-form-field>
 </div>
 
 <div  class="input-box">
   <mat-form-field>
-    <mat-label>Data de Nascimento:</mat-label>
-    <input matInput type="text" class="form-control  text-dark" value="{{Usuario.dataNascimento}}" disabled>
+    <mat-label>Data de Início:</mat-label>
+    <input matInput type="text" class="form-control  text-dark" value="{{Tarefa.dataInicio}}" disabled>
     </mat-form-field>
 </div>
 
 <div  class="input-box">
   <mat-form-field>
-    <mat-label>Escolaridade:</mat-label>
-    <input matInput type="text" class="form-control  text-dark" value="{{Usuario.escolaridade}}" disabled>
+    <mat-label>Data de Conclusão:</mat-label>
+    <input matInput type="text" class="form-control  text-dark" value="{{Tarefa.dataConclusao}}" disabled>
+    </mat-form-field>
+</div>
+
+<div  class="input-box">
+  <mat-form-field>
+    <mat-label>Situação:</mat-label>
+    <input matInput type="text" class="form-control  text-dark" value="{{Tarefa.situacao}}" disabled>
     </mat-form-field>
 </div>
 

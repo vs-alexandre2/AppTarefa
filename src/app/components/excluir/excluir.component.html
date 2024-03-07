@@ -1,11 +1,11 @@
-<div *ngIf="Usuario">
+<div *ngIf="Tarefa">
 <h1 mat-dialog-title>Deseja confirmar a exclução?</h1>
 <div mat-dialog-content>
-  <p style="font: bold;">Usuário:</p>
-  <p>{{Usuario.nome}} {{Usuario.sobrenome}}</p>
+  <p style="font: bold;">Tarefa:</p>
+  <p>{{Tarefa.nome}}</p>
 
-  <p style="font-style: bold;">E-mail:</p>
-  <p>{{Usuario.email}}</p>
+  <p style="font-style: bold;">Responsável:</p>
+  <p>{{Tarefa.responsavel}}</p>
 
 </div>
 <div mat-dialog-actions>

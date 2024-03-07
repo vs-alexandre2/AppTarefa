@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { UsuarioService } from 'src/app/services/usuario-service.service';
-import { Usuario } from '../../models/Usuarios';
+import { TarefaService } from 'src/app/services/tarefa-service.service';
+import { Tarefa } from '../../models/Tarefas';
 import { ExcluirComponent } from '../../components/excluir/excluir.component'
 import { MatDialog } from '@angular/material/dialog';
 
@@ -11,23 +11,24 @@ import { MatDialog } from '@angular/material/dialog';
 })
 export class HomeComponent implements OnInit{
 
-  Usuarios: Usuario[] = [];
-  UsuariosGeral: Usuario[] = [];
-  columnsToDisplay = ['Nome', 'Sobrenome', 'E-mail', 'Ações', 'Excluir'];
+  Tarefas: Tarefa[] = [];
+  TarefasGeral: Tarefa[] = [];
+  columnsToDisplay = ['Nome', 'Situação', 'Início', 'Conclusão', 'Responsável', 'Ações', 'Excluir'];
 
 
-  constructor(private UsuarioService : UsuarioService, public matDialog: MatDialog) { }
+  constructor(private TarefaService : TarefaService, public matDialog: MatDialog) { }
 
 
   ngOnInit(): void {
-    this.UsuarioService.GetUsuarios().subscribe((data) => {
+    this.TarefaService.GetTarefas().subscribe((data) => {
       const dados = data.dados;
        dados.map((item) => {
-         item.dataNascimento = new Date(item.dataNascimento!).toLocaleDateString('pt-BE');
+         item.dataInicio = new Date(item.dataInicio!).toLocaleDateString('pt-BE');
+         item.dataConclusao = new Date(item.dataConclusao!).toLocaleDateString('pt-BE');
        });
 
-      this.UsuariosGeral = dados;
-      this.Usuarios = dados;
+      this.TarefasGeral = dados;
+      this.Tarefas = dados;
 
     })
   }
@@ -38,8 +39,8 @@ export class HomeComponent implements OnInit{
     const target = event.target as HTMLInputElement;
     const value = target.value.toLowerCase();
 
-    this.Usuarios = this.UsuariosGeral.filter(Usuario => {
-      return Usuario.nome.toLowerCase().includes(value);
+    this.Tarefas = this.TarefasGeral.filter(Tarefa => {
+      return Tarefa.nome.toLowerCase().includes(value);
     })
   }
 

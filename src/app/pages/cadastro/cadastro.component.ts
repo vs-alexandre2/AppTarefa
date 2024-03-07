@@ -1,8 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Usuario } from 'src/app/models/Usuarios';
-import { UsuarioService } from 'src/app/services/usuario-service.service';
+import { Tarefa } from 'src/app/models/Tarefas';
+import { TarefaService } from 'src/app/services/tarefa-service.service';
 
 @Component({
   selector: 'app-cadastro',
@@ -12,17 +12,17 @@ import { UsuarioService } from 'src/app/services/usuario-service.service';
 export class CadastroComponent implements OnInit {
 
   btnAcao = "Cadastrar";
-  btnTitulo = "Cadastrar Usuário";
+  btnTitulo = "Cadastrar Tarefa";
 
-  constructor(private UsuarioService : UsuarioService, private router: Router) {
+  constructor(private TarefaService : TarefaService, private router: Router) {
   }
 
   ngOnInit(): void {
   }
 
-  createUsuario(Usuario: Usuario){
+  createTarefa(Tarefa: Tarefa){
 
-       this.UsuarioService.CreateUsuario(Usuario).subscribe((data) => {
+       this.TarefaService.CreateTarefa(Tarefa).subscribe((data) => {
           this.router.navigate(['/']);
        })
   }

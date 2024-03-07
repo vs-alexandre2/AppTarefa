@@ -1,7 +1,7 @@
 <mat-card>
 
-  <div class="usuario-box" >
-    <button routerLink="cadastro" mat-raised-button color="primary">Cadastrar novo usuário</button>
+  <div class="Tarefa-box" >
+    <button routerLink="cadastro" mat-raised-button color="primary">Cadastrar nova tarefa</button>
     <div class="input-box">
       <mat-form-field>
         <mat-label>Procurar:</mat-label>
@@ -12,35 +12,45 @@
 
 
 
-  <table mat-table [dataSource]="Usuarios" class="mat-elevation-z8">
+  <table mat-table [dataSource]="Tarefas" class="mat-elevation-z8">
     <ng-container matColumnDef="Nome">
       <th mat-header-cell *matHeaderCellDef>Nome</th>
-      <td mat-cell *matCellDef="let Usuario"> {{Usuario.nome}} </td>
+      <td mat-cell *matCellDef="let Tarefa"> {{Tarefa.nome}} </td>
     </ng-container>
 
-    <ng-container matColumnDef="Sobrenome">
-      <th mat-header-cell *matHeaderCellDef>Sobrenome</th>
-      <td mat-cell *matCellDef="let Usuario"> {{Usuario.sobrenome}} </td>
+    <ng-container matColumnDef="Situação">
+      <th mat-header-cell *matHeaderCellDef>Situação</th>
+      <td mat-cell *matCellDef="let Tarefa"> {{Tarefa.situacao}} </td>
     </ng-container>
 
-    <ng-container matColumnDef="E-mail">
-      <th mat-header-cell *matHeaderCellDef>E-mail</th>
-      <td mat-cell *matCellDef="let Usuario"> {{Usuario.email}} </td>
+    <ng-container matColumnDef="Início">
+      <th mat-header-cell *matHeaderCellDef>Início</th>
+      <td mat-cell *matCellDef="let Tarefa"> {{Tarefa.dataInicio}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="Conclusão">
+      <th mat-header-cell *matHeaderCellDef>Conclusão</th>
+      <td mat-cell *matCellDef="let Tarefa"> {{Tarefa.dataConclusao}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="Responsável">
+      <th mat-header-cell *matHeaderCellDef>Responsável</th>
+      <td mat-cell *matCellDef="let Tarefa"> {{Tarefa.responsavel}} </td>
     </ng-container>
 
     <ng-container matColumnDef="Ações">
       <th mat-header-cell *matHeaderCellDef></th>
-      <td mat-cell *matCellDef="let Usuario">
-        <a  routerLink="editar/{{Usuario.id}}" mat-raised-button color="primary">Editar</a>
-        <a  routerLink="detalhes/{{Usuario.id}}"  mat-raised-button>Detalhes</a>
+      <td mat-cell *matCellDef="let Tarefa">
+        <a  routerLink="editar/{{Tarefa.id}}" mat-raised-button color="primary">Editar</a>
+        <a  routerLink="detalhes/{{Tarefa.id}}"  mat-raised-button>Detalhes</a>
       </td>
     </ng-container>
 
     <ng-container matColumnDef="Excluir">
       <th mat-header-cell *matHeaderCellDef></th>
-      <td mat-cell *matCellDef="let Usuario">
+      <td mat-cell *matCellDef="let Tarefa">
         <mat-dialog-actions>
-          <a  (click)="openDialog(Usuario.id)"  mat-raised-button color="warn">Excluir</a>
+          <a  (click)="openDialog(Tarefa.id)"  mat-raised-button color="warn">Excluir</a>
         </mat-dialog-actions>
       </td>
   </ng-container>

@@ -562,7 +562,7 @@ legend + * {
 /* rtl:raw:
 [type="tel"],
 [type="url"],
-[type="email"],
+[type="responsavel"],
 [type="number"] {
   direction: ltr;
 }
@@ -12131,12 +12131,12 @@ textarea.form-control-lg {
 .navbar.bg-dark input[type=search],
 .navbar.bg-dark input[type=text],
 .navbar.bg-dark input[type=password],
-.navbar.bg-dark input[type=email],
+.navbar.bg-dark input[type=responsavel],
 .navbar.bg-dark input[type=number],
 .navbar.bg-dark input[type=tel], .navbar.bg-primary input[type=search],
 .navbar.bg-primary input[type=text],
 .navbar.bg-primary input[type=password],
-.navbar.bg-primary input[type=email],
+.navbar.bg-primary input[type=responsavel],
 .navbar.bg-primary input[type=number],
 .navbar.bg-primary input[type=tel] {
   color: #fff;
@@ -12145,28 +12145,28 @@ textarea.form-control-lg {
 .navbar.bg-dark input[type=search]:focus,
 .navbar.bg-dark input[type=text]:focus,
 .navbar.bg-dark input[type=password]:focus,
-.navbar.bg-dark input[type=email]:focus,
+.navbar.bg-dark input[type=responsavel]:focus,
 .navbar.bg-dark input[type=number]:focus,
 .navbar.bg-dark input[type=tel]:focus, .navbar.bg-primary input[type=search]:focus,
 .navbar.bg-primary input[type=text]:focus,
 .navbar.bg-primary input[type=password]:focus,
-.navbar.bg-primary input[type=email]:focus,
+.navbar.bg-primary input[type=responsavel]:focus,
 .navbar.bg-primary input[type=number]:focus,
 .navbar.bg-primary input[type=tel]:focus {
   box-shadow: inset 0 -2px 0 #fff;
 }
-.navbar.bg-dark input[type=search]::-moz-placeholder, .navbar.bg-dark input[type=text]::-moz-placeholder, .navbar.bg-dark input[type=password]::-moz-placeholder, .navbar.bg-dark input[type=email]::-moz-placeholder, .navbar.bg-dark input[type=number]::-moz-placeholder, .navbar.bg-dark input[type=tel]::-moz-placeholder, .navbar.bg-primary input[type=search]::-moz-placeholder, .navbar.bg-primary input[type=text]::-moz-placeholder, .navbar.bg-primary input[type=password]::-moz-placeholder, .navbar.bg-primary input[type=email]::-moz-placeholder, .navbar.bg-primary input[type=number]::-moz-placeholder, .navbar.bg-primary input[type=tel]::-moz-placeholder {
+.navbar.bg-dark input[type=search]::-moz-placeholder, .navbar.bg-dark input[type=text]::-moz-placeholder, .navbar.bg-dark input[type=password]::-moz-placeholder, .navbar.bg-dark input[type=responsavel]::-moz-placeholder, .navbar.bg-dark input[type=number]::-moz-placeholder, .navbar.bg-dark input[type=tel]::-moz-placeholder, .navbar.bg-primary input[type=search]::-moz-placeholder, .navbar.bg-primary input[type=text]::-moz-placeholder, .navbar.bg-primary input[type=password]::-moz-placeholder, .navbar.bg-primary input[type=responsavel]::-moz-placeholder, .navbar.bg-primary input[type=number]::-moz-placeholder, .navbar.bg-primary input[type=tel]::-moz-placeholder {
   color: rgba(255, 255, 255, 0.5);
 }
 .navbar.bg-dark input[type=search]::placeholder,
 .navbar.bg-dark input[type=text]::placeholder,
 .navbar.bg-dark input[type=password]::placeholder,
-.navbar.bg-dark input[type=email]::placeholder,
+.navbar.bg-dark input[type=responsavel]::placeholder,
 .navbar.bg-dark input[type=number]::placeholder,
 .navbar.bg-dark input[type=tel]::placeholder, .navbar.bg-primary input[type=search]::placeholder,
 .navbar.bg-primary input[type=text]::placeholder,
 .navbar.bg-primary input[type=password]::placeholder,
-.navbar.bg-primary input[type=email]::placeholder,
+.navbar.bg-primary input[type=responsavel]::placeholder,
 .navbar.bg-primary input[type=number]::placeholder,
 .navbar.bg-primary input[type=tel]::placeholder {
   color: rgba(255, 255, 255, 0.5);
@@ -12825,11 +12825,11 @@ textarea.form-control,
 input.form-control,
 input[type=text],
 input[type=password],
-input[type=email],
+input[type=responsavel],
 input[type=number],
 [type=text].form-control,
 [type=password].form-control,
-[type=email].form-control,
+[type=responsavel].form-control,
 [type=tel].form-control,
 [contenteditable].form-control {
   box-shadow: inset 0 -1px 0 #ddd;
@@ -12840,11 +12840,11 @@ textarea.form-control:focus,
 input.form-control:focus,
 input[type=text]:focus,
 input[type=password]:focus,
-input[type=email]:focus,
+input[type=responsavel]:focus,
 input[type=number]:focus,
 [type=text].form-control:focus,
 [type=password].form-control:focus,
-[type=email].form-control:focus,
+[type=responsavel].form-control:focus,
 [type=tel].form-control:focus,
 [contenteditable].form-control:focus {
   box-shadow: inset 0 -2px 0 #2196f3;
@@ -12858,16 +12858,16 @@ input[type=text][disabled],
 input[type=text][readonly],
 input[type=password][disabled],
 input[type=password][readonly],
-input[type=email][disabled],
-input[type=email][readonly],
+input[type=responsavel][disabled],
+input[type=responsavel][readonly],
 input[type=number][disabled],
 input[type=number][readonly],
 [type=text].form-control[disabled],
 [type=text].form-control[readonly],
 [type=password].form-control[disabled],
 [type=password].form-control[readonly],
-[type=email].form-control[disabled],
-[type=email].form-control[readonly],
+[type=responsavel].form-control[disabled],
+[type=responsavel].form-control[readonly],
 [type=tel].form-control[disabled],
 [type=tel].form-control[readonly],
 [contenteditable].form-control[disabled],
@@ -12875,7 +12875,7 @@ input[type=number][readonly],
   border-bottom: 1px dotted #ddd;
   box-shadow: none;
 }
-textarea[disabled]::-moz-placeholder, textarea.form-control[disabled]::-moz-placeholder, input.form-control[disabled]::-moz-placeholder, input[type=text][disabled]::-moz-placeholder, input[type=password][disabled]::-moz-placeholder, input[type=email][disabled]::-moz-placeholder, input[type=number][disabled]::-moz-placeholder, [type=text].form-control[disabled]::-moz-placeholder, [type=password].form-control[disabled]::-moz-placeholder, [type=email].form-control[disabled]::-moz-placeholder, [type=tel].form-control[disabled]::-moz-placeholder, [contenteditable].form-control[disabled]::-moz-placeholder {
+textarea[disabled]::-moz-placeholder, textarea.form-control[disabled]::-moz-placeholder, input.form-control[disabled]::-moz-placeholder, input[type=text][disabled]::-moz-placeholder, input[type=password][disabled]::-moz-placeholder, input[type=responsavel][disabled]::-moz-placeholder, input[type=number][disabled]::-moz-placeholder, [type=text].form-control[disabled]::-moz-placeholder, [type=password].form-control[disabled]::-moz-placeholder, [type=responsavel].form-control[disabled]::-moz-placeholder, [type=tel].form-control[disabled]::-moz-placeholder, [contenteditable].form-control[disabled]::-moz-placeholder {
   color: #ddd;
 }
 textarea[disabled], textarea[disabled]::placeholder,
@@ -12887,16 +12887,16 @@ input[type=text][disabled],
 input[type=text][disabled]::placeholder,
 input[type=password][disabled],
 input[type=password][disabled]::placeholder,
-input[type=email][disabled],
-input[type=email][disabled]::placeholder,
+input[type=responsavel][disabled],
+input[type=responsavel][disabled]::placeholder,
 input[type=number][disabled],
 input[type=number][disabled]::placeholder,
 [type=text].form-control[disabled],
 [type=text].form-control[disabled]::placeholder,
 [type=password].form-control[disabled],
 [type=password].form-control[disabled]::placeholder,
-[type=email].form-control[disabled],
-[type=email].form-control[disabled]::placeholder,
+[type=responsavel].form-control[disabled],
+[type=responsavel].form-control[disabled]::placeholder,
 [type=tel].form-control[disabled],
 [type=tel].form-control[disabled]::placeholder,
 [contenteditable].form-control[disabled],

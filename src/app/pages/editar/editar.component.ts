@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Usuario } from 'src/app/models/Usuarios';
-import { UsuarioService } from 'src/app/services/usuario-service.service';
+import { Tarefa } from 'src/app/models/Tarefas';
+import { TarefaService } from 'src/app/services/tarefa-service.service';
 
 @Component({
   selector: 'app-editar',
@@ -11,25 +11,25 @@ import { UsuarioService } from 'src/app/services/usuario-service.service';
 export class EditarComponent implements OnInit{
 
   btnAcao = "Editar";
-  btnTitulo = "Editar Usuário";
-  Usuario!: Usuario;
+  btnTitulo = "Editar Tarefa";
+  Tarefa!: Tarefa;
 
-  constructor(private UsuarioService : UsuarioService, private router :Router,  private route : ActivatedRoute) {
+  constructor(private TarefaService : TarefaService, private router :Router,  private route : ActivatedRoute) {
 
 
   }
 
   ngOnInit(): void {
     const id = Number(this.route.snapshot.paramMap.get('id'));
-    this.UsuarioService.GetUsuario(id).subscribe((data) => {
-        this.Usuario = data.dados;
+    this.TarefaService.GetTarefa(id).subscribe((data) => {
+        this.Tarefa = data.dados;
 
     });
   }
 
-  async editUsuario(Usuario : Usuario){
+  async editTarefa(Tarefa : Tarefa){
 
-      this.UsuarioService.EditUsuario(Usuario).subscribe(data => {
+      this.TarefaService.EditTarefa(Tarefa).subscribe(data => {
         this.router.navigate(['/']);
       });
 

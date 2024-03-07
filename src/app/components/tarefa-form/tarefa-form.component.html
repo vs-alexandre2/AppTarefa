@@ -1,0 +1,96 @@
+
+
+
+<mat-card>
+    <h1>{{btnTitulo}}</h1>
+
+  <form  [formGroup]="TarefaForm" (ngSubmit)="submit()" #formDir="ngForm">
+  <input type="hidden" value="" formControlName="id">
+
+  <div class="input-box">
+    <mat-form-field>
+      <mat-label>Nome:</mat-label>
+      <input matInput id="nome" type="text" class="form-control text-dark" maxlength="40" formControlName="nome" placeholder="Insira o nome!" required >
+    </mat-form-field>
+  </div>
+  
+  <div  class="input-box">
+    <mat-form-field>
+      <mat-label>Descrição:</mat-label>
+         <input matInput id="descricao" type="text" class="form-control  text-dark" maxlength="200" formControlName="descricao" placeholder="Insira a descrição!" required>
+     </mat-form-field>
+  </div>
+
+  <div  class="input-box">
+    <mat-form-field>
+      <mat-label>Responsável:</mat-label>
+         <input matInput id="responsavel" type="text" class="form-control  text-dark" maxlength="20" formControlName="responsavel" placeholder="Insira o responsável!" required>
+     </mat-form-field>
+  </div>
+ 
+  <div  class="input-box">
+    <mat-form-field>
+      <mat-label>Data de Início:</mat-label>
+      <mat-form-field class="form-select">
+        <mat-label>Selecione</mat-label>
+        <input matInput [matDatepicker]="picker" formControlName="dataInicio">
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+     </mat-form-field>
+  </div>
+
+  <div  class="input-box">
+    <mat-form-field>
+      <mat-label>Data de Conclusão:</mat-label>
+      <mat-form-field class="form-select">
+        <mat-label>Selecione</mat-label>
+        <input matInput [matDatepicker]="picker2" formControlName="dataConclusao">
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="picker2"></mat-datepicker-toggle>
+        <mat-datepicker #picker2></mat-datepicker>
+      </mat-form-field>
+     </mat-form-field>
+  </div>
+
+  <mat-form-field>
+    <mat-label>Situação</mat-label>
+    <mat-select id="situacao" class="form-select"  formControlName="situacao" required>
+      <mat-option value="Criada">Criada</mat-option>
+      <mat-option value="Iniciada">Iniciada</mat-option>
+      <mat-option value="Concluida">Concluída</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+
+
+
+<div  class="btn-box">
+    <button type="submit" class="btn btn-success w-50" [disabled]="!TarefaForm.valid"  mat-raised-button color="primary" >{{btnAcao}}</button>
+    <button class="btn btn-primary w-50" routerLink=""   mat-raised-button >Voltar</button>
+</div>
+
+<br>
+<div *ngIf="TarefaForm.get('nome')?.errors?.['required'] && TarefaForm.get('nome')?.touched">
+  <font color="red">Nome obrigatório!</font>
+</div>
+<div *ngIf="TarefaForm.get('descricao')?.errors?.['required'] && TarefaForm.get('descricao')?.touched">
+  <font color="red">Descrição obrigatória!</font>
+</div>
+<div *ngIf="TarefaForm.get('responsavel')?.errors && TarefaForm.get('responsavel')?.touched">
+  <font color="red">Responsável obrigatório!</font>
+</div>
+<div *ngIf="TarefaForm.get('dataInicio')?.errors && TarefaForm.get('dataInicio')?.touched">
+  <font color="red">Data de Início inválida!</font>
+</div>
+<div *ngIf="TarefaForm.get('dataConclusao')?.errors && TarefaForm.get('dataConclusao')?.touched">
+  <font color="red">Data de Conclusão inválida!</font>
+</div>
+<div *ngIf="TarefaForm.get('situacao')?.errors && TarefaForm.get('situacao')?.touched">
+  <font color="red">Situação inválida!</font>
+</div>
+
+</form>
+
+</mat-card>

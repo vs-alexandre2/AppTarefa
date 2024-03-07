@@ -11,7 +11,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { CadastroComponent } from './pages/cadastro/cadastro.component';
 import { DetalhesComponent } from './pages/detalhes/detalhes.component';
 import { EditarComponent } from './pages/editar/editar.component';
-import { UsuarioFormComponent } from './components/usuario-form/usuario-form.component';
+import { TarefaFormComponent } from './components/tarefa-form/tarefa-form.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import {MatButtonModule} from '@angular/material/button';
@@ -33,7 +33,7 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
     CadastroComponent,
     DetalhesComponent,
     EditarComponent,
-    UsuarioFormComponent,
+    TarefaFormComponent,
     ExcluirComponent
   ],
   imports: [
